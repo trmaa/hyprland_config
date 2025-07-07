@@ -1,81 +1,102 @@
 * {
-    border-radius: 100px;
-    font-family: "Classic Console Neue";
-    font-size: 19px;
-    padding: 0px;
-    margin: 0px;
-    color: #fff;
+	/* General taskbar font, I like maple mono ^-^*/
+	font-family: Classic Console Neue;
+	border-radius: 8;
+	font-size: 14px;
+	padding: 0px;
+	margin-right: 4px;
+	background: transparent;
 }
 
 window#waybar {
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    background-color: shade(@base, 0);
-    border-radius: 0px;
+	/* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+	background-image: linear-gradient(to bottom, #141216 100%);
+	border-radius: 14px;
+	padding: 0px;
+	border-style: none;
 }
 
-tooltip {
+#battery,
+#backlight,
+#network,
+#clock,
+#custom-applauncher,
+#workspaces,
+#pulseaudio {
+	background-image: linear-gradient(to bottom, #27232b 100%);
+
+	margin: 6px;
+	margin-right: 0px;
+	padding: 4px 8px;
+	border-radius: 8px;
+	color: #d8cab8;
+
+	border-style: none;
+	transition-duration: 120ms;
 }
 
 #clock {
-    padding: 2px;
-    margin: 2px;
-}
-#tray,
-#memory,
-#battery,
-#network,
-#pulseaudio {
-    margin: 6px 6px 6px 0px;
-    padding: 2px 8px;
+	margin-right: 6px;
 }
 
-#workspaces {
-    color: #fff;
-    background-color: #303536;
+#pulseaudio:hover {
+	background-image: linear-gradient(to bottom, #f44 100%);
+	color: #141216;
+	transition-duration: 120ms;
+}
+
+#custom-applauncher {
+  font-weight: bold;
+  transition-duration: 120ms;
+}
+#custom-applauncher:hover {
+  background-image: linear-gradient(to bottom, #f44 100%);
+  color: #141216;
+  transition-duration: 120ms;
 }
 
 #workspaces button {
-    all: initial;
-    min-width: 0;
-    box-shadow: inset 0 -3px transparent;
-    padding: 2px 4px;
+	transition-duration: 100ms;
+	all: initial;
+	min-width: 0;
+	font-weight: bold;
+	color: #d8cab8;
+	margin-left: 0.2cm;
 }
 
+#workspaces button:hover {
+	transition-duration: 120ms;
+	color: #f00;
+}
 #workspaces button.focused {
-    color: #000;
+	color: #f00;
+	font-weight: bold;
 }
-
+#workspaces button.active {
+	color: #f44;
+	font-weight: bold;
+}
 #workspaces button.urgent {
-}
-
-#clock {
-    color: #fff;
-}
-
-#tray {
+	color: #fcb167;
 }
 
 #battery {
-    color: #000;
-    background-color: #fff;
+	background-color: #222222;
+	color: #fff;
 }
-
-#cpu {}
-#network {
-    color: #fff;
-}
-#pulseaudio {
-    color: #fff;
-}
-
-#memory.critical {
-}
-
 #battery.warning,
-#battery.critical{
-    background-color: #f53c3c;
-}
+#battery.critical,
 #battery.urgent {
+	color: #ff4444;
+}
+
+#backlight {
+	background-color: #222222;
+	color: #fff;
+}
+
+#backlight:hover {
+	background-image: linear-gradient(to bottom, #f44 100%);
+	color: #141216;
+	transition-duration: 120ms;
 }
